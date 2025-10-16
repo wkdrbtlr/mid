@@ -29,5 +29,11 @@ menubar.add_cascade(label="파일", menu=file_menu)
 # 5. 윈도우의 메뉴로 위에서 만든 메뉴바를 설정합니다.
 window.config(menu=menubar)
 
+# 화면 중앙에 텍스트를 표시하기 위한 라벨(Label) 생성
+# font 옵션으로 글꼴과 크기를 지정할 수 있습니다.
+label = tk.Label(window, text="메모장을 만들어봐요", font=("맑은 고딕", 16))
+
 # 윈도우를 화면에 표시
 window.mainloop()
+
+
