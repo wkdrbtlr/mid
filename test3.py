@@ -26,12 +26,25 @@ file_menu.add_command(label="종료", command=window.quit)
 # 4. 메뉴바에 '파일' 메뉴를 '파일'이라는 이름으로 추가합니다.
 menubar.add_cascade(label="파일", menu=file_menu)
 
-# 5. 윈도우의 메뉴로 위에서 만든 메뉴바를 설정합니다.
-window.config(menu=menubar)
+# '편집' 드롭다운 메뉴를 생성합니다.
+edit_menu = tk.Menu(menubar, tearoff=0)
+edit_menu.add_command(label="실행 취소")
+edit_menu.add_command(label="다시 실행")
+edit_menu.add_separator()
+edit_menu.add_command(label="잘라내기")
+edit_menu.add_command(label="복사")
+edit_menu.add_command(label="붙여넣기")
+edit_menu.add_separator()
+edit_menu.add_command(label="모두 선택")
 
-# 화면 중앙에 텍스트를 표시하기 위한 라벨(Label) 생성
-# font 옵션으로 글꼴과 크기를 지정할 수 있습니다.
-label = tk.Label(window, text="메모장을 만들어봐요", font=("맑은 고딕", 16))
+# 메뉴바에 '편집' 메뉴를 '편집'이라는 이름으로 추가합니다.
+menubar.add_cascade(label="편집", menu=edit_menu)
+
+# 5. 윈도우의 메뉴로 완성된 메뉴바를 설정합니다.
+window.config(menu=menubar)
 
 # 윈도우를 화면에 표시
 window.mainloop()
+
+
+
